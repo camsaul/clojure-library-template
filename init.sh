@@ -10,7 +10,7 @@ read PROJECT
 
 echo "Generating project..."
 
-perl -pi -e "s/ORG/$ORG/g" project.clj .circleci/config.yml README.md
+perl -pi -e "s/ORG/$ORG/g" project.clj .circleci/config.yml README.md .github/CODEOWNERS
 perl -pi -e "s/PROJECT/$PROJECT/g" project.clj .circleci/config.yml README.md
 
 echo "Resetting Git history..."
