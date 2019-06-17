@@ -1,5 +1,5 @@
 (defproject ORG/PROJECT "1.0.0-SNAPSHOT"
-  :description "Shared things used across several Metabase projects, such as i18n and config."
+  :description ""
   :url "https://github.com/ORG/PROJECT"
   :min-lein-version "2.5.0"
 
