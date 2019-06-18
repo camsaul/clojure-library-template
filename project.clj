@@ -22,7 +22,7 @@
   :profiles
   {:dev
    {:dependencies
-    [[org.clojure/clojure "1.10.0"]
+    [[org.clojure/clojure "1.10.1"]
      [expectations "2.2.0-beta2"]]
 
     :injections
