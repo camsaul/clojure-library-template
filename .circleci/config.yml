@@ -8,12 +8,12 @@ executors:
   default:
     working_directory: /home/circleci/ORG/PROJECT/
     docker:
-      - image: circleci/clojure:lein-2.8.1
+      - image: circleci/clojure:lein-2.9.1
 
   java-11:
     working_directory: /home/circleci/ORG/PROJECT/
     docker:
-      - image: circleci/clojure:openjdk-11-lein-2.8.1
+      - image: circleci/clojure:openjdk-11-lein-2.9.1
 
 
 ########################################################################################################################
