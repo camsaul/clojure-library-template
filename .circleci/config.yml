@@ -80,14 +80,6 @@ be-deps:
           command: lein << parameters.lein-command >>
           no_output_timeout: 5m
 
-  deploy:
-    executor: default
-    steps:
-      - attach-workspace
-      - run:
-          name: Deploy to clojars
-          command: lein deploy clojars
-
 
 ########################################################################################################################
 #                                                      WORKFLOWS                                                       #
@@ -140,7 +132,8 @@ workflows:
             - deps
           lein-command: bikeshed
 
-      - deploy:
+      - lein:
+          name: deploy
           requires:
             - linter-bikeshed
             - linter-docstring-checker
@@ -148,6 +141,7 @@ workflows:
             - linter-namespace-decls
             - tests
             - tests-java-11
+          lein-command: deploy clojars
           filters:
             branches:
               only: master
