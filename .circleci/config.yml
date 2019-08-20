@@ -54,7 +54,7 @@ jobs:
           paths:
             - ORG/PROJECT
 
-be-deps:
+  deps:
     executor: default
     steps:
       - attach-workspace
