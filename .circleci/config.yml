@@ -109,36 +109,43 @@ workflows:
           lein-command: test
 
       - lein:
-          name: linter-eastwood
+          name: eastwood
           requires:
             - deps
           lein-command: eastwood
 
       - lein:
-          name: linter-docstring-checker
+          name: docstring-checker
           requires:
             - deps
           lein-command: docstring-checker
 
       - lein:
-          name: linter-namespace-decls
+          name: namespace-decls
           requires:
             - deps
           lein-command: check-namespace-decls
 
       - lein:
-          name: linter-bikeshed
+          name: bikeshed
           requires:
             - deps
           lein-command: bikeshed
 
       - lein:
+          name: yagni
+          requires:
+            - deps
+          lein-command: yagni
+
+      - lein:
           name: deploy
           requires:
-            - linter-bikeshed
-            - linter-docstring-checker
-            - linter-eastwood
-            - linter-namespace-decls
+            - bikeshed
+            - docstring-checker
+            - eastwood
+            - namespace-decls
+            - yagni
             - tests
             - tests-java-11
           lein-command: deploy clojars
